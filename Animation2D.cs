@@ -36,7 +36,8 @@ namespace Com.Shon.YallaBalagan {
             bool pressD = Input.GetKey("d");
             bool pressS = Input.GetKey("s");
             bool pressShift = Input.GetKey("left shift");
-            if(Input.GetKey(KeyCode.Space)&& isgrounded.isGrounded)
+           
+            if (Input.GetKey(KeyCode.Space)&& isgrounded.isGrounded)
             {
                 animator.SetBool("IsJump", true);
             }

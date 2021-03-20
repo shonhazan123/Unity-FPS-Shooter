@@ -34,11 +34,11 @@ namespace Com.Shon.YallaBalagan
         public LayerMask WhatisEnemy;
 
         private float Timetofire = 0f;
-        bool reloading = false;
+        public bool reloading = false;
         bool Reload;
         bool Redytoshoot;
         int BulletLeft,BulletsFired = 0 , totalbullet = 90;
-        protected Animator handsAnimator;
+        public Animator handsAnimator;
         public GameObject Scar;
 
         public bool Shooting;
@@ -181,6 +181,7 @@ namespace Com.Shon.YallaBalagan
         {
             
             reloading = true;
+            handsAnimator.SetBool("Reloading", reloading);
             Invoke("ReloadFinished", reloadtime);
 
         }
@@ -197,6 +198,7 @@ namespace Com.Shon.YallaBalagan
             if (totalbullet < 0)
                 totalbullet = 0;
             reloading = false;
+            handsAnimator.SetBool("Reloading", reloading);
             Redytoshoot = true;
         }
         public void RecoilEffect(float Recoil, float kickBack)
